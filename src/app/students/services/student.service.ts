@@ -14,4 +14,9 @@ export class StudentService {
     getStudents(): Student[] {
         return this.students;
     }
+
+    deleteStudent(lastname: string) {
+        this.students = 
+            this.students.filter(student => student.lastname != lastname);
+    }
 }

@@ -12,10 +12,26 @@
     <Label col="2" text="tata"></Label>
 </GridLayout> -->
 
-<GridLayout
-    height="50"
-    *ngFor="let student of students" 
-    columns="100, 100, *">
-    <Label col="0" [text]="student.firstname"></Label>
-    <Label col="1" [text]="student.lastname"></Label>
-</GridLayout>
+<StackLayout>
+    <GridLayout
+        height="50"
+        *ngFor="let student of students" 
+        columns="100, 100, *">
+        <Label 
+            col="0"
+            [nsRouterLink]="['/students/', student.lastname]"
+            [text]="student.firstname"></Label>
+        <Label 
+            col="1" 
+            (tap)="goToDetails(student.lastname)" 
+            [text]="student.lastname"></Label>
+        <Button 
+            col="2" 
+            text="Supprimer" 
+            (tap)="deleteStudent(student.lastname)"></Button>
+    </GridLayout>
+</StackLayout>
+
+<Label [text]="logging"></Label>
+
+
