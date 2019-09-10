@@ -1,0 +1,12 @@
+<StackLayout>
+    <TextField
+        [(ngModel)]="newStudent.firstname"
+        autocorrect="false"
+        hint="Prénom"></TextField>
+    <TextField
+        [(ngModel)]="newStudent.lastname"
+        autocorrect="false"
+        hint="Nom"></TextField>
+    <Button text="Ajouter" (tap)="addStudent()"></Button>
+    <Label [text]="log"></Label>
+</StackLayout>

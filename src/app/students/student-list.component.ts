@@ -11,28 +11,36 @@ export class StudentListComponent {
     message: string = 'Simple message';
     students: Student[] = [];
     logging: string = '';
+    test: any;
 
     // Dependency Injection
     constructor(private studentService: StudentService) {
-        this.students = this.studentService.getStudents();
+        this.updateStudentList();
     }
 
     changeMessage() {
         this.message = 'Message modifié';
     }
 
+    updateStudentList() {
+        this.students = this.studentService.getStudents();
+    }
+
     deleteStudent(lastname: string) {
         // Altération de la source de données (copiée au niveau du composant)
-        // this.students = 
-        //     this.students.filter(student => student.lastname != lastname);
+        // this.students = this.students.filter(student => student.lastname != lastname);
 
         // Altération de la source de données (au niveau du service)
         this.studentService.deleteStudent(lastname);
-        // Mise à jour de la copie côté composant
-        this.students = this.studentService.getStudents();
+        this.updateStudentList(); // mise à jour côté composant
     }
 
     goToDetails(lastname: string) {
         //this.logging = lastname;
+    }
+
+    addStudent(student: Student) {
+        this.studentService.addStudent(student);
+        this.updateStudentList();
     }
 }

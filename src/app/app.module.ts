@@ -6,8 +6,11 @@ import { AppComponent } from "./app.component";
 
 import { StudentListComponent } from "./students/student-list.component";
 import { StudentDetailComponent } from "./student-detail/student-detail.component";
+import { AddStudentComponent } from "./add-student/add-student.component";
+
 // Uncomment and add to NgModule imports if you need to use two-way binding
-// import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NetComponent } from "./net/net.component";
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
@@ -17,13 +20,16 @@ import { StudentDetailComponent } from "./student-detail/student-detail.componen
         AppComponent
     ],
     imports: [
-        NativeScriptModule,
-        AppRoutingModule
+        AppRoutingModule,
+        NativeScriptFormsModule,
+        NativeScriptModule
     ],
     declarations: [
         AppComponent,
         StudentListComponent,
-        StudentDetailComponent
+        StudentDetailComponent,
+        AddStudentComponent,
+        NetComponent
     ],
     providers: [],
     schemas: [
