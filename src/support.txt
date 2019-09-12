@@ -1,0 +1,32 @@
+9 -> 13 septembre 2019
+DNT5    Front Mobile
+
+A télécharger
+Nodejs
+jdk8
+android studio
+
+3 approches (or natif)
+1) Web responsive (css, viewport, media queries, bootstrap, foundation)
+2) Hybride sans compilation native
+html/css/js
+installation sur l'os (ios, android)
+Webview encapsule l'application
+UE similaire au natif
+API natives
+Exemple: Ionic + cordova
+3) Hybride avec compilation native
+html/css/js
+compiler le code source -> natif
+Exemple: Nativescript
+
+npm install nativescript -g
+npm install @angular/cli -g
+Installation de jdk8
+Installation d'android studio
+
+Variables d'environnement système
+ANDROID_HOME    C:\Users\[user]\AppData\Local\Android\Sdk
+JAVA_HOME       C:\Program Files\Java\jdk1.8.0_221
+
+tns doctor
